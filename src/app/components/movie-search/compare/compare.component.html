@@ -1,0 +1,44 @@
+<div id="container">
+  <div id="movie-container" fxLayout fxLayoutAlign="space-around">
+    <div class="movie" [class.box]="first">
+      <div *ngIf="first" class="ribbon"><span>WINNER</span></div>
+      <img src="{{movieLeft.Poster}}">
+      <h3>{{movieLeft.Title}}</h3>
+      <mat-divider></mat-divider>
+      <ul>
+        <li>Released: {{movieLeft.Released}}</li>
+        <li>Runtime: {{movieLeft.Runtime}}</li>
+        <li>Genre: {{movieLeft.Genre}}</li>
+        <li>Director: {{movieLeft.Director}}</li>
+        <li>Writer: {{movieLeft.Writer}}</li>
+        <li>Actors: {{movieLeft.Actors}}</li>
+        <li>Plot: {{movieLeft.Plot}}</li>
+        <li>Language: {{movieLeft.Language}}</li>
+        <li>Country: {{movieLeft.Country}}</li>
+        <li>Awards: {{movieLeft.Awards}}</li>
+        <li>imdbRating: <p [class.green]="first" [class.red]="second">{{movieLeft.imdbRating}}</p></li>
+        <li>imdbVotes: {{movieLeft.imdbVotes}}</li>
+      </ul>
+    </div>
+    <div class="movie" [class.box]="second">
+      <div *ngIf="second" class="ribbon"><span>WINNER</span></div>
+      <img src="{{movieRight.Poster}}">
+      <h3>{{movieRight.Title}}</h3>
+      <mat-divider></mat-divider>
+      <ul>
+        <li>Released: {{movieRight.Released}}</li>
+        <li>Runtime: {{movieRight.Runtime}}</li>
+        <li>Genre: {{movieRight.Genre}}</li>
+        <li>Director: {{movieRight.Director}}</li>
+        <li>Writer: {{movieRight.Writer}}</li>
+        <li>Actors: {{movieRight.Actors}}</li>
+        <li>Plot: {{movieRight.Plot}}</li>
+        <li>Language: {{movieRight.Language}}</li>
+        <li>Country: {{movieRight.Country}}</li>
+        <li>Awards: {{movieRight.Awards}}</li>
+        <li>imdbRating: <p [class.green]="second" [class.red]="first">{{movieRight.imdbRating}}</p></li>
+        <li>imdbVotes: {{movieRight.imdbVotes}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

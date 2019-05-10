@@ -1,0 +1,14 @@
+<div id="container" fxLayout fxLayoutAlign="center">
+  <div id="content">
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="input" name="input" autocomplete="off" (keyup)="keyup()"/>
+      <mat-placeholder class="placeholder">Movie 2</mat-placeholder>
+    </mat-form-field>
+    <div id="list">
+        <div class="list-item" *ngFor="let movie of movies$ | async" (click)="chooseMovie($event.target.querySelector('p').innerText, movie.imdbID)">
+          <img src="{{movie.Poster}}" height="100" width="75" (click)="chooseMovie($event.target.nextElementSibling.innerText, movie.imdbID)">
+          <p (click)="chooseMovie($event.target.innerText, movie.imdbID)">{{movie.Title}}</p>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+#container {    
+    width: 100%;
+    position: relative;
+}
+
+#list {
+    max-height: 250px !important;
+    overflow: auto;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+}
+
+.list-item {
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.list-item:hover {
+    background-color: #ecc96a;
+    cursor: pointer;
+}
+
+img {
+    padding: 5px;
+}
+
+::ng-deep.mat-form-field-ripple {
+    background-color: #ecc96a !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    background-color: white !important;
+}
+
+mat-form-field {
+    color: #ecc96a !important;
+    font-family: 'Oswald', sans-serif !important;
+    width: 250px !important;
+    text-align: center;
+}
+
+.placeholder {
+    color: whitesmoke;
+}
