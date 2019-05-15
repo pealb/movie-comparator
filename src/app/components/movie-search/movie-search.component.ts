@@ -31,15 +31,23 @@ export class MovieSearchComponent implements OnInit {
   ngOnInit() { }
 
   catchL(e) {
-    this.movieLeft = null;
-    this.ds.getMovieByImdbId(e).subscribe(res => this.movieLeft = res);
+    if(e == null) {
+      this.movieLeft = null;
+    } 
+    else {
+      this.ds.getMovieByImdbId(e).subscribe(res => this.movieLeft = res);
+    }
     this.compare = false;
     this.height = 0;
   }
 
   catchR(e) {
-    this.movieRight = null;
-    this.ds.getMovieByImdbId(e).subscribe(res => this.movieRight = res);
+    if(e == null) {
+      this.movieRight = null;
+    }
+    else {
+      this.ds.getMovieByImdbId(e).subscribe(res => this.movieRight = res);
+    }
     this.compare = false;
     this.height = 0;
   }

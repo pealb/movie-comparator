@@ -30,4 +30,8 @@ export class MovieSearchLeftComponent implements OnInit {
     this.movies$ = empty();
   }
 
+  clearSelection() {
+    this.chooseMovie("", null);
+  }
+
 }

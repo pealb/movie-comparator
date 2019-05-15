@@ -1,13 +1,13 @@
 <div id="container">
     <h1>Select two movies to compare</h1>
-    <app-movie-search-left (cchange)="catchL($event)"></app-movie-search-left>
-    <app-movie-search-right (cchange)="catchR($event)"></app-movie-search-right>
+    <app-movie-search-left (cchange)="catchL($event)" #left></app-movie-search-left>
+    <app-movie-search-right (cchange)="catchR($event)" #right></app-movie-search-right>
     <div fxLayout="column" fxLayoutAlign="center center">
         <div>
             <a (click)="toggleCompare()" href="#compare" matTooltip="Compare" mat-button>
                 <mat-icon>compare_arrows</mat-icon>
             </a>
-            <button (click)="clearSelections()" matTooltip="Clear selections" mat-button>
+            <button (click)="left.clearSelection(); right.clearSelection()" matTooltip="Clear selections" mat-button>
                 <mat-icon>restore_from_trash</mat-icon>
             </button>
         </div>
