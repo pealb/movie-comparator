@@ -13,6 +13,9 @@ import { MovieSearchLeftComponent } from './components/movie-search/movie-search
 import { MovieSearchRightComponent } from './components/movie-search/movie-search-right/movie-search-right.component';
 import { CompareComponent } from './components/movie-search/compare/compare.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { CompareComponent } from './components/movie-search/compare/compare.comp
     HttpClientModule,
     FormsModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

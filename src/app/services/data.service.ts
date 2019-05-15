@@ -14,7 +14,7 @@ import { IMovie } from '../models/movie.model';
 export class DataService {
 
   private apiKey: string = "4b6065ff";
-  private url: string = "http://www.omdbapi.com/?apikey=" + this.apiKey;
+  private url: string = "https://www.omdbapi.com/?apikey=" + this.apiKey;
 
   constructor(private http: HttpClient) { }
 
