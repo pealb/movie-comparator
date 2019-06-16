@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { IMovie } from 'src/app/models/movie.model';
 import { DataService } from 'src/app/services/data.service';
+import { DbService } from '../../services/db.service';
 
 @Component({
   selector: 'app-movie-search',
@@ -18,7 +19,7 @@ export class MovieSearchComponent implements OnInit {
   first: boolean;
   second: boolean;
 
-  constructor(private ds: DataService) { 
+  constructor(private ds: DataService, private db: DbService) { 
     this.compare = false;
     this.height = 0;
     this.movieLeft = null;
@@ -35,7 +36,10 @@ export class MovieSearchComponent implements OnInit {
       this.movieLeft = null;
     } 
     else {
-      this.ds.getMovieByImdbId(e).subscribe(res => this.movieLeft = res);
+      this.ds.getMovieByImdbId(e).subscribe(res => {
+        this.movieLeft = res
+        this.db.addMovie(res);
+      });
     }
     this.compare = false;
     this.height = 0;
@@ -46,7 +50,10 @@ export class MovieSearchComponent implements OnInit {
       this.movieRight = null;
     }
     else {
-      this.ds.getMovieByImdbId(e).subscribe(res => this.movieRight = res);
+      this.ds.getMovieByImdbId(e).subscribe(res => {
+        this.movieRight = res
+        this.db.addMovie(res);
+      });
     }
     this.compare = false;
     this.height = 0;

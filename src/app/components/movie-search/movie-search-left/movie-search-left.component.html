@@ -4,7 +4,7 @@
       <input matInput type="text" [(ngModel)]="input" name="input" autocomplete="off" (keyup)="keyup()"/>
       <mat-placeholder class="placeholder">Movie 1</mat-placeholder>
     </mat-form-field>
-    <div id="list">
+    <div id="list" [ngStyle.xs]="{'position': 'relative'}">
         <div class="list-item" *ngFor="let movie of movies$ | async" (click)="chooseMovie($event.target.querySelector('p').innerText, movie.imdbID)">
             <img src="{{movie.Poster}}" height="100" width="75" (click)="chooseMovie($event.target.nextElementSibling.innerText, movie.imdbID)">
             <p (click)="chooseMovie($event.target.innerText, movie.imdbID)">{{movie.Title}}</p>

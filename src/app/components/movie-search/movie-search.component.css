@@ -4,6 +4,10 @@
     background-image: url('/assets/img/dark_bg.jpg');
 }
 
+#movie-search-container {
+    margin: 0 auto;
+}
+
 h1 {
     text-align: center;
     margin: 0 auto;

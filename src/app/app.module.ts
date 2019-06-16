@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { AngularFireModule } from '@angular/fire';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
@@ -13,7 +15,6 @@ import { MovieSearchLeftComponent } from './components/movie-search/movie-search
 import { MovieSearchRightComponent } from './components/movie-search/movie-search-right/movie-search-right.component';
 import { CompareComponent } from './components/movie-search/compare/compare.component';
 
-import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -31,7 +32,8 @@ import { environment } from '../environments/environment';
     FormsModule,
     MaterialModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
